@@ -28,7 +28,7 @@ public class MongoAutoSequenceExampleApplication {
 	@PostMapping("/saveBook")
 	public Book save(@RequestBody Book book){
 		//generate sequence
-		book.setId(service.getSequenceNumber(SEQUENCE_NAME));
+		book.setId(service.getSequenceNumber(Book.ID_KEY, Book.GENERATED_ID, Book.ID_VAL));
 		return repository.save(book);
 	}
 

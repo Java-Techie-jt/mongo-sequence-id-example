@@ -14,8 +14,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Book {
 
     @Transient
-    public static final String SEQUENCE_NAME = "user_sequence";
+    public static final String SEQUENCE_NAME = "";
 
+   @Transient
+    public static final String ID_VAL = "user_sequence";
+    @Transient
+    public static final String GENERATED_ID = "userId"; //IdSequence.formId
+    @Transient
+    public static final String ID_KEY = "id"; //IdSequence.formId
+    
     @Id
     private int id;
     private String name;
